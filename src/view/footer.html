@@ -1,0 +1,35 @@
+
+<div class="footer tc">
+	<p>版权所有 深圳启明星电子商务有限公司</p>
+	<h3 class="mt20 bold">开发者：汪微、丘汉文、邓智荣、李式淼</h3>
+	<div id="loading"></div>
+	<div id="hddb"></div>
+</div>
+
+<script>
+//回到顶部JS开始
+ $(window).scroll(function(){
+  var scrollTop=document.documentElement.scrollTop||document.body.scrollTop;
+  //alert(scrollTop)
+  if(scrollTop>200){
+   $('#hddb').show();
+  }else{
+   $('#hddb').hide();
+  }
+   
+ }); 
+ $('#hddb').click(function(){
+   var scrollTimer=null;
+   scrollTimer=setInterval(function (){
+    var scrollTop=document.documentElement.scrollTop||document.body.scrollTop;
+    var iSpeed=Math.floor(-scrollTop/6);
+    if(scrollTop==0)
+    {
+     clearInterval(scrollTimer);
+    }
+    document.documentElement.scrollTop=document.body.scrollTop=scrollTop+iSpeed;
+   }, 30);
+  });
+  
+ //回到顶部JS结束
+</script>

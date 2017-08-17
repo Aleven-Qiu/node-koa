@@ -1,0 +1,129 @@
+.main {
+    p {
+        font-size: 17px;
+    }
+}
+.search-box {
+    position:relative;
+    height:180px;
+    .search-img {
+        background:url('http://img.central.morning-star.cn/3msEnaDJ8FyQy67pYcsFre34KCBGzmSN.png?imageslim') center center no-repeat;
+        background-size:cover;
+        
+    }
+    .search-bg,.search-img {
+        height: 100%;
+        display: block;
+        position:absolute;
+        left:0;
+        top:0;
+        width: 100%;
+    }
+    .search-bg {
+        background:rgba(243,0,0,0.55);
+    }
+    .search-main {
+        position:absolute;
+        width:100%;
+        text-align:center;
+        color:#fff;
+        font-size:35px;
+        top:60px;
+    }
+}
+.main-list {
+    width:1080px; 
+    margin:90px auto 0 auto;
+}
+.list-top {
+    text-align:center;
+    figcaption {
+        text-align: center;
+        span {
+            display: inline-block;
+            color: #333;
+            margin-right: 30px;
+            cursor: pointer;
+            font-size:24px;
+        }
+        .active,span:hover {
+            color:#df4a43;
+            font-size:26px;
+        }
+    }
+    P {
+        display: inline-block;
+        width: 60px;
+        height: 2px;
+        background:#cdcdcd;
+        margin-top: 10px;
+        position: relative;
+        left: -18px;
+    }
+}
+.list-box {
+    list-style:none;
+    margin:50px -50px 0 0;
+    .head-pic{
+        position:relative;
+        border:1px solid #dedede;
+        border-bottom:none;
+        a{
+            display: block;
+            img{width:100%;}
+        }
+        .isUser{
+            position:absolute;
+            left: 0;
+            right: 0;
+            top:0;
+            bottom: 0;
+            background:rgba(0,0,0,0.6)
+        }
+    }
+}
+.list-box li {
+    float:left;
+    width:250px;
+    margin:0 20px 20px 0;
+    img {
+        height:180px;
+        border-radius:5px 5px 0 0;
+        display: block;
+    }
+    overflow:hidden;
+    .list-con {
+        padding:30px;
+        border-radius:0 0 5px 5px;
+        border:1px solid #dedede;
+        border-top:none;
+        .listcon-tit {
+            font-size: 18px;
+            font-weight: bold;
+            color: #df4a43;
+        }
+        .listcon-ver {
+            font-size: 12px;
+            color: #afafb5;
+            padding:10px 0;
+        }
+        .listcon-intro {
+            font-size: 14px;
+            color: #7d7d7d;
+            line-height: 24px;
+        }
+        .btns {
+            margin-top: 20px;
+            display: flex;
+            p {
+                display: inline-block;
+                flex-grow:1;
+                text-align: center;
+                span {
+                    position:relative;
+                    z-index: 22;
+                }
+            }
+        }
+    }
+}

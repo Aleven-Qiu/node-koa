@@ -1,0 +1,104 @@
+
+.search-box {
+	position:relative;
+	height:200px;
+	.search-img {
+		background:url('http://img.central.morning-star.cn/3msEnaDJ8FyQy67pYcsFre34KCBGzmSN.png?imageslim') center center no-repeat;
+		background-size:cover;
+		
+	}
+	.search-bg,.search-img {
+		height: 100%;
+		display: block;
+		position:absolute;
+		left:0;
+		top:0;
+	}
+	.search-bg {
+		background:rgba(243,0,0,0.55);
+	}
+	.search-main {
+		position:absolute;
+		text-align:center;
+		color:#fff;
+		font-size:35px;
+		top:90px;
+	}
+}
+.detail_box {
+	display:block;
+	text-align:left;
+}
+.detail_left {
+	float:left;
+	width:70%;
+}
+.detail_right {
+	float:right;
+	width:25%;
+}
+.detai_title {
+	font-size:32px;
+	color:#df4a43;
+	span {
+		color: #a59e9e;
+		font-size: 14px;
+		line-height: 48px;
+	}
+}
+.detail_descr {
+	font-size:14px;
+	color:#a59e9e;
+}
+.detail_list {
+	dt {
+		font-weight: 600;
+		padding:20px 0 10px 0;
+		font-size: 24px;
+		border-bottom: 1px solid #dedede;
+		margin:25px 0 20px 0;
+	}
+}
+.detail_message {
+	display:block;
+	overflow:hidden;
+	margin-bottom:30px;
+	.detail_messtop {
+		display: block;
+		font-size: 22px;
+		margin-bottom: 25px;
+	}
+	ul {
+		list-style: none;
+		overflow:hidden;
+		li {
+			padding:5px 0;
+			border-bottom:1px solid #dedede;
+			line-height: 26px;
+			font-size: 14px;
+			color: #a59e9e;
+			text-align: left;
+			a {
+				color: #a59e9e;
+				font-size: 13px;
+				display: block;
+				&:hover {
+					color: #f00;
+				}
+			}
+		}
+	}
+	.detail_masbox {
+		li {
+			a {
+				line-height: 20px;
+				font-size: 13px;
+				display: block;
+				color: #38436b;
+				&:hover {
+					color: #f00;
+				}
+			}
+		}
+	}
+}

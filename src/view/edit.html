@@ -1,0 +1,59 @@
+<!-- 样式 -->
+<link rel="stylesheet" href="/css/edit.css">
+<!-- markdown -->
+<link rel="stylesheet" href="/markdown/css/style.css" />
+<link rel="stylesheet" href="/markdown/css/editormd.css" />
+<div id="edit" v-cloak>
+	<nav class="search-box">
+		<p class="search-img"></p>
+		<span class="search-bg"></span>
+		<div class="search-main">
+			{{edit.title}} : 组件编辑
+		</div>
+	</nav>
+
+	<div class="main"> 
+		<div class="block">
+			<div class="left fl"><span class="red">*</span>组件名称</div>
+			<div class="right fl">
+				<input class="from-control" v-model="edit.title" type="text" >
+			</div>
+		</div>
+		<div class="block">
+			<div class="left fl"><span class="red">*</span>组件作者</div>
+			<div class="right fl">
+				<input class="from-control" v-model="edit.author" type="text" >
+			</div>
+		</div>
+		<div class="block">
+			<div class="left fl"><span class="red">*</span>组件描述</div>
+			<div class="right fl">
+				<input class="from-control" v-model="edit.describes" type="text" >
+			</div>
+		</div>
+		<div class="block">
+			<div class="left fl">提交原因</div>
+			<div class="right fl">
+				<input class="from-control" v-model="edit.submitReason" type="text" >
+			</div>
+		</div>
+		<div class="block">
+			<div class="left fl"><span class="red">*</span>组件详情</div>
+		</div>
+		<!-- <textarea class="form-control" v-model="edit.text" rows="3" placeholder="组件详情"></textarea> -->
+		<div id="test-editormd">
+
+		</div>
+		<div class="block mt30 tc">
+			<button class="submit" @click="submitEdit" type="button">提交</button>
+			<button class="close" onclick="history.go(-1)" type="button">返回</button>
+		</div>
+
+	</div>
+
+</div>
+<script src="/markdown/js/editormd.js"></script>
+<script src="/js/edit-model.js"></script>
+
+
+

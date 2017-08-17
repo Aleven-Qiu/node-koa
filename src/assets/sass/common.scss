@@ -1,0 +1,174 @@
+/*回到顶部CSS*/
+#hddb {
+   width:40px;
+   height:40px;
+   background:url(/images/common/totop.png) no-repeat left top;
+   background-size:100% 100%;
+   position: fixed;
+   right:10px;
+   bottom:50px;
+   display:none;
+   cursor: pointer;
+   z-index:100;
+}
+.header {
+   background:#fff;
+   height: 60px;
+   line-height: 60px;
+   dl {
+      width: 1200px;
+      margin:auto;
+      overflow:hidden;
+      dt {
+         float: left;
+         a {
+            padding-left: 50px;
+            position: relative;
+            display: block;
+            font-size: 22px;
+            color: #38436b;
+         }
+         a:after {
+            content: '';
+            left: 0;
+            top: 15px;
+            width:30px;
+            height: 30px;
+            background:url('/images/index/logo.png') left center no-repeat;
+            display: block;
+            background-size:cover;
+            position:absolute;
+         }
+      }
+      dd {
+         float: right;
+         img {
+            width: 32px;
+            height: 32px;
+            display: inline-block;
+            border-radius: 100%;
+            vertical-align: middle;
+            margin-right: 3px;
+         }
+         .loginouticon {
+            font-size: 28px;
+         }
+         span {
+            display: inline-block;
+            cursor: pointer;
+            font-size: 18px;
+         }
+         .addicon {
+            font-size: 22px;  
+         }
+         .addtop-btn {
+            transition: all .5s ease;
+            transform: rotate(10deg);
+            -webkit-transform: rotate(10deg);
+         }
+         .more-user{
+            .addicon{
+               font-size:25px;
+               margin-top: -8px;
+            }
+         }
+         .wiki{
+            .addicon{
+               font-size:30px;
+            }
+         }
+      }
+   }
+   
+   
+}
+.main{
+   width:100%;
+   overflow:hidden;
+   position:relative;
+}
+.btn {
+   display: inline-block;
+   padding:4px;
+   text-align: center;
+   line-height: 22px;
+   min-width: 60px;
+   font-size: 14px;
+   color:#fff;
+   border-radius:2px;
+   cursor: pointer;
+   position:relative;
+   span {
+      position:relative;
+      z-index: 999; 
+   }
+   &:after {
+      content:'';
+      left: 0;
+      top: 0;
+      width: 0;
+      height: 100%;
+      position:absolute;
+      transition: all .3s ease;
+   }
+   &:hover {
+      span {
+         color: #fff!important;
+      }
+      &:after {
+         width: 100%;
+      }
+   }
+}
+.btn-detail {
+   border:1px solid #e9807b;
+   color: #e9807b;
+   a{
+      color: #e9807b;
+   }
+   &:hover {
+      &:after {
+         background:#e9807b;
+      }
+   }
+}
+.btn-edit {
+   border:1px solid #44a5de;
+   color: #44a5de;
+   &:hover {
+      &:after {
+         background:#44a5de;
+      }
+   }
+}
+.btn-down {
+   border:1px solid #dea844;
+   color: #dea844;
+   &:hover {
+      &:after {
+         background:#dea844;
+      }
+   }
+}
+.btn-up {
+   border:1px solid #67d675;
+   color: #67d675;
+   &:hover {
+      &:after {
+         background:#67d675;
+      }
+   }
+}
+.footer {
+   background:#273547;
+   color: #fff;
+   padding:30px 0;
+   min-width: 1200px;
+   line-height: 30px;
+   margin-top: 80px;
+   .wiki{
+      color:#44a5de;
+   }
+}
+
+

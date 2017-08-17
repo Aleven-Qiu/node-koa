@@ -1,0 +1,92 @@
+.main {
+	p {
+		font-size: 17px;
+	}
+}
+.search-box {
+	position:relative;
+	height:200px;
+	.search-img {
+		background:url('http://img.central.morning-star.cn/3msEnaDJ8FyQy67pYcsFre34KCBGzmSN.png?imageslim') center center no-repeat;
+		background-size:cover;
+		
+	}
+	.search-bg,.search-img {
+		height: 100%;
+		display: block;
+		position:absolute;
+		left:0;
+		top:0;
+		width: 100%;
+	}
+	.search-bg {
+		background:rgba(243,0,0,0.55);
+	}
+	.search-main {
+		position:absolute;
+		width:100%;
+		text-align:center;
+		color:#fff;
+		font-size:35px;
+		top:70px;
+	}
+}
+.push{
+	width:700px;
+	margin:0 auto;
+	margin-top:100px;
+	.block{
+		overflow:hidden;
+		margin-bottom:20px;
+		position:relative;
+		.form-control{
+			border:solid 1px #ddd;
+			padding:5px 10px;
+			width:500px;
+		}
+		input.form-control,select.form-control{
+			height:40px;
+			border-radius:0;
+		}
+		.left{
+			float:left;
+			width:160px;
+			text-align:right;
+			font-size:16px;
+			padding-right:20px;
+			line-height:40px;
+		}
+		.default{
+			position:absolute;
+			right:60px;
+			top:10px;
+			font-size:12px;
+			color:#999;
+		}
+	}
+	.submit{
+		text-align:center;
+		button{
+			border:solid 1px #ccc;
+			font-size:16px;
+			padding:15px 25px;
+		}	
+		.go{
+			background:#f15952;
+			border:solid 1px #e9807b;
+			color:#fff;
+			margin-right:10px;
+			&:hover{
+				background:#e9807b;
+			}
+		}
+		.back{
+			&:hover{
+				background:#f4f4f4;
+			}
+		}
+	}
+}
+
+
+

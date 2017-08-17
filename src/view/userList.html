@@ -1,0 +1,61 @@
+<!-- 样式 -->
+<link rel="stylesheet" href="/css/userList.css">
+<link rel="stylesheet" href="/css/page.css">
+<div class="main" id="user-list"> 
+	<nav class="search-box">
+		<p class="search-img"></p>
+		<span class="search-bg"></span>
+		<div class="search-main">
+			npm服务器用户列表
+		</div>
+	</nav>
+
+	<section v-cloak class="main-list">
+		<figure class="list-top">
+			<figcaption>
+				<span>用户列表</span>
+			</figcaption>
+			<P>
+			</P>
+		</figure> 
+		<ul class="list-box clearfix">
+			<li v-for="(item,i) in dataList">
+				<div class="head-pic">
+					<a :href="'/userDetail?id=' + item.id"><img :src="item.userImg | imgBaseUrl" /></a>
+					<div
+						v-if="item.isUser==0" 
+						class="isUser"></div>
+				</div>
+				<article class="list-con">
+					<a href="#" class="listcon-tit">用户名:{{item.username}}</a>
+					<p class="listcon-ver">昵称:{{item.nickname?item.nickname:'&nbsp;'}}</p>
+					<div class="btns">
+						<p v-if="item.isUser == 1">
+							<label class="btn btn-detail">
+								<a :href="'/userDetail?id=' + item.id">
+									<span>详情</span>
+								</a>
+							</label>
+						</p>
+						<p v-if="item.isUser == 0">
+							<label @click="updateStatus(item.id,1)" class="btn btn-up"><span>启用</span></label>
+						</p>
+						<p v-if="item.isUser != 0 && userMsg.level == 'admin'" >
+							<label @click="updateStatus(item.id,0)" class="btn btn-down"><span>禁用</span></label>
+						</p>
+						<p v-if="item.isUser != 0 && userMsg.level == 'user' && userMsg.username == item.username" >
+							<label @click="updateStatus(item.id,0)" class="btn btn-down"><span>禁用</span></label>
+						</p>
+					</div>
+				</article>
+			</li>
+		</ul>
+		<!--  分页 -->
+		<div class="tc clearfix">
+			<div id="copot-page"></div>
+		</div>
+	</section>
+
+</div>
+<script src="/js/Page.js"></script>
+<script src="/js/userList.js"></script>

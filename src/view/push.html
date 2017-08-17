@@ -1,0 +1,57 @@
+<!-- 样式 -->
+<link rel="stylesheet" href="/css/push.css">
+
+<div class="main" id="push"> 
+	<nav class="search-box">
+		<p class="search-img"></p>
+		<span class="search-bg"></span>
+		<div class="search-main">
+			新增组件到npm服务器
+		</div>
+	</nav>
+	
+	<div class="push">
+		<!-- <button type="button" class="cursor" id="getGitHubList()">获得github列表信息</button> -->
+
+		<div class="block">
+			<span class="left"><span class="red">*</span>选择PUSH的组件:</span>
+			<select class="form-control right" v-model.trim="create.title">
+				<option value="">选择组件</option>
+				<% datas.gitList.forEach(function (item) {%>
+					<option value="<%= item %>" ><%= item %></option>
+	            <% })%>
+			</select>
+		</div>
+		<div class="block">
+			<span class="left"><span class="red">*</span>组件版本号:</span>
+			<input class="form-control right" type="text" v-model.trim="create.version" placeholder="上一版本号为1.0.1">
+			<span class="default">(默认版本号会自动++)</span>
+		</div>
+		<div class="block" v-if="create.title">
+			<span class="left"><span class="red">*</span>组件编辑类型:</span>
+			<select class="form-control right">
+				<option v-if="!isHave" value="add">新增组件</option>
+				<option v-if="isHave" value="update">新版本迭代</option>
+			</select>
+		</div>
+		<div class="block">
+			<span class="left"><span class="red">*</span>贡献者:</span>
+			<input class="form-control right" v-model.trim="create.author" type="text" value="wangwei">
+		</div>
+		<div class="block">
+			<span class="left"><span class="red">*</span>组件描述:</span>
+			<textarea class="form-control right" v-model.trim="create.describes" rows="5" placeholder="填写组件功能等信息"></textarea>
+		</div>
+		<div class="block" v-if="isHave">
+			<span class="left"><span class="red">*</span>更新组件说明:</span>
+			<textarea class="form-control right" rows="5" v-model.trim="create.submitReason" placeholder="填写修改提交组件理由"></textarea>
+		</div>
+		<div class="submit">
+			<button class="go cursor" @click="submitPushComent" type="button">提交组件</button>
+			<button class="back cursor" type="button" @click="history.back()">取消</button>
+		</div>
+	</div>
+
+</div>
+<script src="/js/push-model.js"></script>
+

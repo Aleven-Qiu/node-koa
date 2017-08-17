@@ -1,0 +1,82 @@
+<!-- 样式 -->
+<link rel="stylesheet" href="/css/userDetail.css">
+<div id="user-detail"> 
+	<div v-cloak class="content clearfix">
+		<div class="con-left">
+			<div class="head-pic-content">
+				<div class="head-pic">
+					<img :src="userInfo.userImg | imgBaseUrl">
+					<span
+						@click="editPicShow()" 
+						v-if="userMsg.username==userInfo.username?true:false" 
+						class="edit-pic user_select">更换头像</span>
+				</div>
+				<div class="nickname">{{userInfo.username}}</div>
+			</div>
+			<div class="user-manager">账户管理</div>
+			<span class="line"></span>
+			<ul class="menu">
+				<li>
+					<a class="on">个人信息<span class="iconfont">&#xe61e;</span></a>
+				</li>
+			</ul>
+		</div>
+		<div class="con-right">
+			<div class="common-title">
+				个人信息
+				<a href="javascript:;" v-if="!isEditShow && userMsg.username==userInfo.username" class="fr" @click="isEditShow=true"><i class="iconfont">&#xe62b;</i>编辑</a>
+				<a href="javascript:;" v-if="isEditShow && userMsg.username==userInfo.username" class="fr" @click="isEditShow=false"><i class="iconfont">&#xe608;</i>取消</a>
+			</div>
+			<div class="line"></div>
+			<div class="info-wapper">
+				<div class="info-box clearfix">
+					<label class="fl">账号名：</label>
+					<div class="fl">{{userInfo.username}}</div>
+				</div>
+				<div class="info-box clearfix">
+					<label class="fl">昵称：</label>
+					<input v-if="isEditShow" v-model="userInfo.nickname" placeholder="填写用户昵称" type="text">
+					<div v-if="!isEditShow" class="fl">{{userInfo.nickname?userInfo.nickname:'&nbsp;'}}</div>
+				</div>
+				<div class="info-box clearfix" v-if="isEditShow">
+					<label class="fl">密码：</label>
+					<input v-model="userInfo.password" placeholder="填写密码" type="password">
+				</div>
+				<div class="info-box clearfix" v-if="isEditShow">
+					<label class="fl">确认密码：</label>
+					<input v-model="userInfo.shrepassword" placeholder="填写确认密码" type="password">
+				</div>
+				<div class="info-box clearfix" v-if="isEditShow">
+					<button class="btn btn-red ok" @click="editUserMsg" type="button">确定</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<modal
+		:show.sync="editPicObj.show"
+		width="480"
+		title="修改头像"
+		>
+		<div slot="modal-body">
+			<div class="avator-wapper">
+				<div class="avator-mode">
+					<img :src="editPicObj.userImg | imgBaseUrl" width="192" height="192">
+				</div>
+				<div class="tc">
+					<a 
+						@click="uploadPic()"
+						herf="javascript:;" class="avator-btn-fake inline_block">上传头像</a>
+				</div>
+				<div class="tc mt-20">
+					<button
+						@click="editPic()" 
+						class="moco-btn moco-btn-blue inline_block mr10">确认</button>
+					<button
+						@click="editPicObj.show=false" 
+						class="moco-btn moco-btn-normal inline_block">取消</button>
+				</div>
+			</div>
+		</div>
+	</modal>
+</div>
+<script src="/js/userDetail.js"></script>

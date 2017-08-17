@@ -1,0 +1,116 @@
+
+<style>
+	body{
+		font-family: '微软雅黑';
+		background: url('/images/common/bg.png');
+	}
+	.lg-container{
+		width: 450px;
+		margin: 200px auto;
+		padding:20px 40px;
+		border:1px solid #f4f4f4;
+		background:rgba(255,255,255,.5);
+		-webkit-border-radius:10px;
+		-moz-border-radius:10px;
+		border-radius:10px;
+		
+		-webkit-box-shadow: 0 0 2px #aaa;
+		-moz-box-shadow: 0 0 2px #aaa;
+		box-shadow: 0 0 2px #aaa;
+	}
+	.lg-container h1{
+		font-size:40px;
+		text-align:center;
+		margin-bottom:40px;
+	}
+	#lg-form > div {
+		margin:10px 5px;
+		padding:5px 0;
+	}
+	#lg-form label{
+		display: none;
+		font-size: 20px;
+		line-height: 25px;
+	}
+	#lg-form input[type="text"],
+	#lg-form input[type="password"]{
+		border:1px solid rgba(51,51,51,.5);
+		-webkit-border-radius:10px;
+		-moz-border-radius:10px;
+		border-radius:10px;
+		padding: 5px;
+		font-size: 16px;
+		line-height: 35px;
+		width: 100%;
+		text-align:center;
+	}
+	#lg-form button{
+		margin-top:10px;
+		font-size: 18px;
+		border:1px solid #000;
+		padding:8px 30px;
+		border:1px solid rgba(51,51,51,.5);
+		-webkit-border-radius:10px;
+		-moz-border-radius:10px;
+		border-radius:10px;
+		
+		-webkit-box-shadow: 2px 1px 1px #aaa;
+		-moz-box-shadow: 2px 1px 1px #aaa;
+		box-shadow: 2px 1px 1px #aaa;
+		cursor:pointer;
+	}
+	#lg-form button:active{
+		-webkit-box-shadow: 0px 0px 1px #aaa;
+		-moz-box-shadow: 0px 0px 1px #aaa;
+		box-shadow: 0px 0px 1px #aaa;
+	}
+	#lg-form button:hover{
+		background:#f4f4f4;
+	}
+	#message{width:100%;text-align:center}
+	.success {
+		color: green;
+	}
+	.error {
+		color: red;
+	}
+	.w-150{
+		width: 150px;
+	}
+</style>
+
+<div class="lg-container" id="login">
+	<h1>NPM仓库系统</h1>
+	<form id="lg-form" >
+		<div>
+			<label for="username">Username:</label>
+			<input type="text" v-model="username" placeholder="username"/>
+		</div>
+		<div>
+			<label for="password">Password:</label>
+			<input type="password" v-model="password" placeholder="password" />
+		</div>
+		
+		<div v-if="title=='用户登录'">				
+			<div class="tc">
+				<button type="button" @click="login()">登录</button>
+			</div>
+			<div class="clearfix mt-20">
+				<a href="/register" class="w-150 fl">用户注册</a>
+				<!-- <span class="w-150 fr">忘记密码？</span> -->
+			</div>
+		</div>
+		<div v-else>
+			<div class="tc">
+				<button type="button" @click="register()">注册</button>
+			</div>
+			<div class="clearfix mt-20">
+				<a href="/login" class="w-150 fl">已有账号？登录</a>
+			</div>
+		</div>
+		
+	</form>
+	<div id="message"></div>
+</div>
+
+<script src="/js/login.js"></script>

@@ -1,0 +1,81 @@
+<!-- 样式 -->
+<link rel="stylesheet" href="/css/index.css">
+<link rel="stylesheet" href="/css/page.css">
+<link rel="stylesheet" href="/css/detail.css">
+<!-- markdown -->
+<link rel="stylesheet" href="/markdown/css/style.css" />
+<link rel="stylesheet" href="/markdown/css/editormd.preview.css" />
+
+<div class="main" id="detail" v-cloak> 
+	<nav class="search-box">
+		<p class="search-img"></p>
+		<span class="search-bg"></span>
+		<div class="search-main">
+			{{datas.title}}：详情
+		</div>
+	</nav>
+	<section class="main-list">
+		<p class="detai_title" v-show="!datashow">没有该组件信息</p>
+		<div class="detail_box clearfix" v-show="datashow">
+			<div class="detail_left">
+				<h3 class="detai_title">
+					{{datas.title}}
+					<span class="fr">浏览次数：{{datas.viewTimes}}</span>
+				</h3>
+				<p class="detail_descr mt-20">{{datas.describes}}</p>
+				<dl class="detail_list">
+					<dt>创建时间：{{datas.createTime}}</dt>
+					<dd><div id="test-editormd-view2"></div></dd>
+				</dl>
+			</div>
+			<div class="detail_right">
+				<div class="detail_message">
+					<div class="detail_messtop">
+						组件信息
+						<a :href="'/edit?id='+datas.id+'&type='+type" class="btn btn-edit ml20"><span>修改</span></a>
+						<p v-if="datas.isUse == 2" class="inline-block ml20">
+							<label class="btn btn-up" @click="updataisUse(1,datas)">
+								<span>上线</span>
+							</label>
+						</p>
+						<p v-if="datas.isUse == 1" class="inline-block ml20">
+							<label class="btn btn-down" @click="updataisUse(2,datas)">
+								<span>下线</span>
+							</label>
+						</p>
+					</div>
+					<ul class="detail_masbox">
+						<li>组件贡献者：{{datas.author}}</li>
+						<li>版本：v{{datas.version}}</li>
+						<li>大小：{{datas.size}}</li>
+						<li><a target='_blank' :href="'https://git.oschina.net/allpyrn/qmx-qnpm-modules/tree/master/'+datas.title">https://git.oschina.net/allpyrn/qmx-qnpm-modules/{{datas.title}}</a></li>
+					</ul>
+				</div>
+				<div class="detail_message" v-if="lastVersionData.version">
+					<p>最新版本</p>
+					<ul>
+						<li>
+							<a :href="'/detail?id='+lastVersionData.id">版本：v{{lastVersionData.version}}<span class="ml20">贡献者：{{lastVersionData.author}}</span>
+							</a>
+						</li>
+					</ul>
+				</div>
+				<div class="detail_message">
+					<p>组件历史</p>
+					<ul>
+						<li v-for="(item,index) in historylist" :key="index">
+							<a :href="'/detail?id='+item.id+'&type=old'">版本：v{{item.version}}<span class="ml20">贡献者：{{item.author}}</span>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</section>
+</div>
+
+<script src="/markdown/js/marked.min.js"></script>
+<script src="/markdown/js/prettify.min.js"></script>
+<script src="/markdown/js/editormd.js"></script>
+<script src="/js/detail.js"></script>
+

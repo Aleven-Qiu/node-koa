@@ -1,0 +1,78 @@
+body {
+  background: #f1f1f1; }
+
+.search-box {
+  position: relative;
+  height: 250px; }
+  .search-box .search-img {
+    background: url("http://img.central.morning-star.cn/3msEnaDJ8FyQy67pYcsFre34KCBGzmSN.png?imageslim") center center no-repeat;
+    background-size: cover; }
+  .search-box .search-bg, .search-box .search-img {
+    height: 100%;
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%; }
+  .search-box .search-bg {
+    background: rgba(243, 0, 0, 0.55); }
+  .search-box .search-main {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    color: #fff;
+    font-size: 35px;
+    top: 90px; }
+
+.main {
+  width: 1000px;
+  margin: 80px auto; }
+  .main .block {
+    color: #000;
+    overflow: hidden;
+    margin-bottom: 20px; }
+    .main .block .left {
+      width: 80px;
+      font-size: 14px;
+      line-height: 35px; }
+    .main .block .right .from-control {
+      border: solid 1px #ddd;
+      height: 35px;
+      padding-left: 10px;
+      width: 919px; }
+  .main textarea {
+    width: 1000px;
+    padding: 10px;
+    color: #000;
+    border: solid 1px #ddd;
+    height: 600px;
+    font-size: 14px;
+    line-height: 25px; }
+  .main ::-webkit-scrollbar {
+    width: 5px; }
+  .main ::-webkit-scrollbar-track {
+    background-color: #ffa9a9; }
+  .main ::-webkit-scrollbar-thumb {
+    background-color: #EC5253; }
+  .main ::-webkit-scrollbar-thumb:hover {
+    background-color: #9c3; }
+  .main ::-webkit-scrollbar-thumb:active {
+    background-color: #00aff0; }
+  .main button {
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer; }
+  .main .submit {
+    border: solid 1px #e41f1f;
+    background: #e41f1f;
+    padding: 10px 50px;
+    margin-right: 20px;
+    color: #fff; }
+    .main .submit:hover {
+      background: #ef3f3f; }
+  .main .close {
+    border: solid 1px #ddd;
+    background: #ddd;
+    color: #999; }
+    .main .close:hover {
+      background: #ece8e8; }

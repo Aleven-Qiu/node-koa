@@ -1,0 +1,60 @@
+<!-- 样式 -->
+<link rel="stylesheet" href="/css/index.css">
+<link rel="stylesheet" href="/css/page.css">
+<div class="main" id="home" v-cloak> 
+	<nav class="search-box">
+		<p class="search-img"></p>
+		<span class="search-bg"></span>
+		<div class="search-main">
+			<input type="text" class="inputs" v-model.trim="keyword" v-on:input="searchkey">
+			<button class="cursor" @click="getList(1)"><label class="cursor">search on</label><span class="cursor"></span></button>
+			<ul class="search-ul" v-show="ulshow&&keyword">
+				<li v-for="(item,index) in keylist" :key="index" @click="seltitle(item)">
+					<p>
+						<span class="keylist-title">{{item.title}}</span>
+						<span>v{{item.version}}</span>
+						<span>{{item.size}}</span>
+						<span>{{item.author}}</span>
+					</p>
+				</li>
+			</ul>
+		</div>
+	</nav>
+	<section class="main-list">
+		<figure class="list-top">
+			<figcaption>
+				<span :class="isUse == 1?'active':''" @click="getList(1)" >上线</span>
+				<span @click="getList(2)" :class="isUse == 2?'active':''">下线</span>
+			</figcaption>
+		</figure> 
+		<ul class="list-box clearfix">
+			<li v-for="(item,i) in datalists" :key="i">
+				<a :href="'/detail?id='+item.id"><img :src="'/images/index/bg-'+i%5+'.png'"/></a>
+				<article class="list-con">
+					<a :href="'/detail?id='+item.id" class="listcon-tit">
+						{{item.title}}
+						<label class="fr">{{item.createTime}}</label>
+					</a>
+					<p class="listcon-ver">v{{item.version}}<span class="fr">{{item.size}}</span></p>
+					<p class="listcon-intro">
+						{{item.describes}}
+					</p>
+					<div class="btns">
+						<p><a :href="'/detail?id='+item.id" class="btn btn-detail" ><span>详情</span></a></p>
+						<p><a :href="'/edit?id='+item.id"><label class="btn btn-edit"><span>修改</span></label></a></p>
+						<p v-if="item.isUse == 2"><label class="btn btn-up" @click="updataisUse(1,item)"><span>上线</span></label></p>
+						<p v-if="item.isUse == 1"><label class="btn btn-down" @click="updataisUse(2,item)"><span>下线</span></label></p>
+					</div>
+				</article>
+			</li>
+
+		</ul>
+		<!--  分页 -->
+		<div class="tc clearfix">
+			<div id="copot-page"></div>
+		</div>
+	</section>
+
+</div>
+<script src="/js/Page.js"></script>
+<script src="/js/home.js"></script>

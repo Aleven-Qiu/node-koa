@@ -1,0 +1,325 @@
+@charset "UTF-8";
+/*CSS Reset*/
+*, *:before, *:after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+
+/*设置字体*/
+/*字体结束*/
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td, header, hgroup, nav, section, article, aside, footer, figure, figcaption, menu, button {
+  margin: 0;
+  padding: 0;
+  font-family: '微软雅黑'; }
+
+body {
+  font-family: '微软雅黑';
+  line-height: 1.5;
+  font-size: 14px;
+  color: #333;
+  -webkit-text-size-adjust: none;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+  outline: 0; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: inherit;
+  font-weight: normal; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+fieldset, img {
+  border: 0; }
+
+li {
+  list-style: none; }
+
+input, textarea, select {
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  outline: none;
+  -webkit-appearence: none;
+  -ms-appearence: none; }
+
+button, html input[type="button"], input[type="reset"], input[type="submit"] {
+  border: none;
+  background: none;
+  -webkit-appearance: none;
+  outline: none; }
+
+a {
+  -webkit-touch-callout: none;
+  text-decoration: none;
+  outline: 0;
+  color: #333;
+  text-decoration: none; }
+
+em, i {
+  font-style: normal; }
+
+iframe {
+  display: none; }
+
+::-webkit-input-placeholder {
+  color: #999; }
+
+.center {
+  vertical-align: middle;
+  text-align: center; }
+
+.user_select {
+  -moz-user-select: none;
+  -o-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none; }
+
+[v-cloak] {
+  display: none; }
+
+#loading {
+  display: none;
+  background: url(/images/common/loading-2.gif) rgba(0, 0, 0, 0.5) no-repeat center center;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000000; }
+
+html, body {
+  color: #333 !important; }
+
+a:hover {
+  text-decoration: none; }
+
+.tl {
+  text-align: left; }
+
+.tc {
+  text-align: center; }
+
+.tr {
+  text-align: right; }
+
+.fl {
+  float: left; }
+
+.fr {
+  float: right; }
+
+.clearfix:after {
+  content: '';
+  display: block;
+  clear: both; }
+
+.inline-block {
+  display: inline-block !important; }
+
+.cursor {
+  cursor: pointer; }
+
+.w-100 {
+  height: 100%; }
+
+.fs-14 {
+  font-size: 14px; }
+
+.fs-16 {
+  font-size: 16px; }
+
+.mt-70 {
+  margin-top: 70px; }
+
+.mt-60 {
+  margin-top: 60px; }
+
+.mt-80 {
+  margin-top: 80px; }
+
+.mt-40 {
+  margin-top: 40px; }
+
+.mt-30 {
+  margin-top: 30px; }
+
+.mt-20 {
+  margin-top: 20px; }
+
+.mb-30 {
+  margin-bottom: 30px; }
+
+.mb-20 {
+  margin-bottom: 20px; }
+
+.mb-10 {
+  margin-bottom: 10px; }
+
+.overflow {
+  overflow: hidden; }
+
+.mr20 {
+  margin-right: 20px; }
+
+.ml20 {
+  margin-left: 20px; }
+
+.mr10 {
+  margin-right: 10px; }
+
+.mt30 {
+  margin-top: 30px; }
+
+.bold {
+  font-weight: bold; }
+
+.red {
+  color: red; }
+
+@font-face {
+  font-family: 'iconfont';
+  /* project id 133474 */
+  src: url("//at.alicdn.com/t/font_wem4woeeksf3l3di.eot");
+  src: url("//at.alicdn.com/t/font_wem4woeeksf3l3di.eot?#iefix") format("embedded-opentype"), url("//at.alicdn.com/t/font_wem4woeeksf3l3di.woff") format("woff"), url("//at.alicdn.com/t/font_wem4woeeksf3l3di.ttf") format("truetype"), url("//at.alicdn.com/t/font_wem4woeeksf3l3di.svg#iconfont") format("svg"); }
+
+.iconfont {
+  font-family: "iconfont";
+  font-size: 16px;
+  font-style: normal;
+  vertical-align: middle; }
+
+/*回到顶部CSS*/
+#hddb {
+  width: 40px;
+  height: 40px;
+  background: url(/images/common/totop.png) no-repeat left top;
+  background-size: 100% 100%;
+  position: fixed;
+  right: 10px;
+  bottom: 50px;
+  display: none;
+  cursor: pointer;
+  z-index: 100; }
+
+.header {
+  background: #fff;
+  height: 60px;
+  line-height: 60px; }
+  .header dl {
+    width: 1200px;
+    margin: auto;
+    overflow: hidden; }
+    .header dl dt {
+      float: left; }
+      .header dl dt a {
+        padding-left: 50px;
+        position: relative;
+        display: block;
+        font-size: 22px;
+        color: #38436b; }
+      .header dl dt a:after {
+        content: '';
+        left: 0;
+        top: 15px;
+        width: 30px;
+        height: 30px;
+        background: url("/images/index/logo.png") left center no-repeat;
+        display: block;
+        background-size: cover;
+        position: absolute; }
+    .header dl dd {
+      float: right; }
+      .header dl dd img {
+        width: 32px;
+        height: 32px;
+        display: inline-block;
+        border-radius: 100%;
+        vertical-align: middle;
+        margin-right: 3px; }
+      .header dl dd .loginouticon {
+        font-size: 28px; }
+      .header dl dd span {
+        display: inline-block;
+        cursor: pointer;
+        font-size: 18px; }
+      .header dl dd .addicon {
+        font-size: 22px; }
+      .header dl dd .addtop-btn {
+        transition: all .5s ease;
+        transform: rotate(10deg);
+        -webkit-transform: rotate(10deg); }
+      .header dl dd .more-user .addicon {
+        font-size: 25px;
+        margin-top: -8px; }
+      .header dl dd .wiki .addicon {
+        font-size: 30px; }
+
+.main {
+  width: 100%;
+  overflow: hidden;
+  position: relative; }
+
+.btn {
+  display: inline-block;
+  padding: 4px;
+  text-align: center;
+  line-height: 22px;
+  min-width: 60px;
+  font-size: 14px;
+  color: #fff;
+  border-radius: 2px;
+  cursor: pointer;
+  position: relative; }
+  .btn span {
+    position: relative;
+    z-index: 999; }
+  .btn:after {
+    content: '';
+    left: 0;
+    top: 0;
+    width: 0;
+    height: 100%;
+    position: absolute;
+    transition: all .3s ease; }
+  .btn:hover span {
+    color: #fff !important; }
+  .btn:hover:after {
+    width: 100%; }
+
+.btn-detail {
+  border: 1px solid #e9807b;
+  color: #e9807b; }
+  .btn-detail a {
+    color: #e9807b; }
+  .btn-detail:hover:after {
+    background: #e9807b; }
+
+.btn-edit {
+  border: 1px solid #44a5de;
+  color: #44a5de; }
+  .btn-edit:hover:after {
+    background: #44a5de; }
+
+.btn-down {
+  border: 1px solid #dea844;
+  color: #dea844; }
+  .btn-down:hover:after {
+    background: #dea844; }
+
+.btn-up {
+  border: 1px solid #67d675;
+  color: #67d675; }
+  .btn-up:hover:after {
+    background: #67d675; }
+
+.footer {
+  background: #273547;
+  color: #fff;
+  padding: 30px 0;
+  min-width: 1200px;
+  line-height: 30px;
+  margin-top: 80px; }
+  .footer .wiki {
+    color: #44a5de; }

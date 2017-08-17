@@ -1,0 +1,68 @@
+<!-- 样式 -->
+<link rel="stylesheet" href="/css/wiki.css">
+
+<nav class="search-box">
+	<p class="search-img"></p>
+	<span class="search-bg"></span>
+	<div class="search-main">
+		WIKI
+	</div>
+</nav>
+<div class="main">
+	<div class="block">
+		<h1 class="head">本地qnpm指令安装说明</h1>
+		<div class="content"  style="display:block;">
+			<p>首先安装nrm</p> 
+			<pre>$ npm install -g nrm
+$ nrm add qnpm http://qnpm-server.seosiwei.com/
+$ nrm use qnpm
+$ nrm ls</pre>
+			<p class="mt-20">添加 npm 参数 alias</p>
+			<pre>$ alias qnpm="npm --registry=http://qnpm-server.seosiwei.com/"</pre>
+			<p class="mt-20">切换回npm</p>
+			<pre>$ nrm use npm</pre>
+			<p class="mt-20">进入相应的目录安装依赖 (举例)</p>
+			<pre>$ cd /work/oms/
+$ npm install page --save-dev</pre>
+			<p class="mt-20">现在去开始愉快的使用吧！</p>
+		</div>
+	</div>
+	<div class="block">
+		<h1 class="head">使用sinopia搭建自己的npm服务说明</h1>
+		<div class="content">
+			<p>首先安装sinopia</p> 
+			<pre>$ npm install -g sinopia</pre>
+			<p class="mt-20">在npm中使用新的服务,在通过npm安装依赖包的时候服务器会优先使用服务上已经上传的包，如果找不到会使用公共的npm registry</p>
+			<pre>$ npm set registry http://qnpm-server.seosiwei.com/</pre>
+			<p class="mt-20">通过-l可以指定主机和端口 后 重启</p>
+			<p>ip为举例，可以是你的主机的对外ip，这样就可以通过ip来访问你的npm服务器了</p>
+			<pre>$ sinopia -l qnpm-server.seosiwei.com</pre>
+			<p class="mt-20">安装nrm</p>
+			<pre>$ npm install -g nrm
+$ nrm add qnpm http://qnpm-server.seosiwei.com/
+$ nrm use qnpm
+$ nrm ls</pre>
+			<p class="mt-20">切换回公共的registry</p>
+			<pre>$ nrm use npm</pre>
+			<p class="mt-20">完成了服务器的搭建</p>
+			<p class="mt-20">config.yaml 修改配置</p>
+			<pre>$ url_prefix: http://qnpm-server.seosiwei.com/
+$ storage: /usr/data/sinopia/storage</pre>
+			<p class="mt-20">PM2守护进程</p>
+			<pre>$ npm install pm2 -g
+$ pm2 start `which sinopia`</pre>
+			<p class="mt-20">创建一个用户</p>
+			<pre>$ npm adduser --registry http://qnpm-server.seosiwei.com/</pre>
+			<p>输入用户名，密码，邮箱用户创建完毕。<br>然后进入你要上传的代码目录，执行代码上传。</p>
+			<pre>$ npm publish</pre>
+		</div>
+	</div>
+</div>
+
+<script>
+$('h1.head').click(function(){
+	$(this).parent().siblings('div.block').find('div.content').slideUp('fast')
+	$(this).siblings('div.content').slideDown('fast')	
+})
+</script>
+
